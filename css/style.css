@@ -78,7 +78,13 @@ font-family: 'Barlow', sans-serif;
 .navbar-bars {
   display: none;
   transform: all 1s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
+
+ 
 
 /*End Navbar*/
 
