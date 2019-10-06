@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Barlow+Condensed:400,700&display=swap");
+
+/*
+font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Barlow', sans-serif;
+- Mobile: 375px
+- Desktop: 1440px
+*/
+
+:root {
+  --red: hsl(0, 100%, 68%);
+  --VeryDarkBlue: hsl(230, 29%, 20%);
+  --DarkGrayishBlue: hsl(230, 11%, 40%);
+  --GrayishBlue: hsl(231, 7%, 65%);
+  --LightGrayishBlue: hsl(207, 33%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.figure {
+  position: absolute;
+  background: var(--LightGrayishBlue);
+  width: 50%;
+  height: 60%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 60px;
+}
+
+/*Navbar*/
+.navbar {
+  display: flex;
+  flex-direction: row;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  justify-content: space-between;
+  margin: 4rem 6rem 4rem 7.5rem;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar-item {
+  margin: 0 1.5rem;
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: var(--VeryDarkBlue);
+}
+
+.navbar-item a:hover {
+  text-decoration: underline;
+}
+
+.navbar-item .fa-circle {
+  font-size: 0.5rem;
+  align-self: center;
+  color: var(--DarkGrayishBlue);
+  opacity: 0.4;
+}
+
+.navbar-login a {
+  color: var(--GrayishBlue);
+}
+
+.navbar-bars {
+  display: none;
+  transform: all 1s ease;
+}
+
+/*End Navbar*/
+
+/*Header*/
+.header-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.header-img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.header-text {
+  margin-top: 4rem;
+  margin-left: 7.5rem;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+.header-text__new {
+  background-color: var(--VeryDarkBlue);
+  color: white;
+  border-radius: 28px;
+  padding: 0.25rem 0.7rem;
+  font-size: 1rem;
+}
+
+.header-text__mono {
+  color: var(--GrayishBlue);
+  letter-spacing: 0.4rem;
+  margin-left: 1.2rem;
+}
+
+.header-text__main {
+  font-size: 4rem;
+  color: var(--VeryDarkBlue);
+  margin-top: 1.5rem;
+}
+
+.header-text__sub {
+  font-family: "Barlow", sans-serif;
+  text-transform: initial;
+  color: var(--GrayishBlue);
+  font-size: 1.1rem;
+  width: 70%;
+  margin-bottom: 4rem;
+}
+
+.header-text__button {
+  background: var(--red);
+  color: white;
+  text-transform: uppercase;
+  padding: 0.8rem 1.5rem;
+  outline: none;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.1rem;
+  border-radius: 7px;
+  display: inline;
+}
+
+.header-text__button:hover {
+  opacity: 0.7;
+}
+
+.header-text__nxtbutton {
+  font-size: 1rem;
+  color: var(--GrayishBlue);
+  letter-spacing: 0.2rem;
+  margin-left: 1.5rem;
+}
+/*End Header*/
+
+@media screen and (max-width: 1100px) {
+  .navbar {
+    margin: 4rem 2rem;
+  }
+
+  .header-section {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .header-text {
+    margin: 4rem 2rem;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .header-img {
+    order: -1;
+  }
+  .navbar-links {
+    position: absolute;
+    top: 126px;
+    left: 7%;
+    background: #fff;
+    box-shadow: 0 0 10px hsla(230, 29%, 20%, 0.2);
+    width: 86%;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.3rem;
+    opacity: 0;
+  }
+
+  .navbar-links__show {
+    opacity: 1;
+  }
+
+  .navbar-item {
+    margin: 0.5rem 1.5rem;
+  }
+  .navbar-bars {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    background: var(--VeryDarkBlue);
+    width: 26px;
+    height: 3px;
+    transition: all 0.5s ease;
+    transform-origin: top right;
+  }
+  .change .bar1 {
+    transform: rotate(-45deg) translate(0px, 0px);
+  }
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  .change .bar3 {
+    transform: rotate(45deg) translate(2px, -2px);
+  }
+
+  .navbar-symbol {
+    display: none;
+  }
+
+  .navbar-login {
+    border-top: 2px solid var(--GrayishBlue);
+    width: 70%;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 0.3rem;
+  }
+}
+
+
+@media screen and (max-width:471px){
+.header-text__main{
+    font-size: 2.5rem;
+}
+.header-text__mono{
+    font-size: 0.8rem;
+    margin-left: 0.9rem;
+}
+
+.header-text__sub{
+    width: 90%;
+    margin: 1.2rem 0;
+}
+.header-text__button{
+    padding:0.6rem 1rem;
+}
+.header-text__nxtbutton{
+    margin-left: 0.1rem;
+    letter-spacing:0.1rem;
+
+}
+
+.header-text__nxtbutton::after{
+    content:'to see a preview'
+}
+}
+
+
+/* Footer*/
+.attribution {
+  margin-top: 1rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+/*End Footer*/
